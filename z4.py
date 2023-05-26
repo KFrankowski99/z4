@@ -26,10 +26,11 @@ class SamochodSpalinowy(Samochod):
         return self.pojemnosc_zbiornika * 15
 
 
-class SamochodHybrydowy(SamochodElektryczny, SamochodSpalinowy):
+class SamochodHybrydowy(SamochodSpalinowy):
     def __init__(self, marka, model, rok_produkcji, pojemnosc_baterii, pojemnosc_zbiornika):
-        super().__init__(marka, model, rok_produkcji, pojemnosc_baterii)
-        self.pojemnosc_zbiornika = pojemnosc_zbiornika
-
+        super().__init__(marka, model, rok_produkcji, pojemnosc_zbiornika)
+        self.pojemnosc_baterii=pojemnosc_baterii
     def podaj_zasieg(self):
-        return self.pojemnosc_baterii * 5 + self.pojemnosc_zbiornika * 15
+        return self.pojemnosc_baterii*2 + self.pojemnosc_zbiornika*8
+
+
